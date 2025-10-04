@@ -1,3 +1,28 @@
+import os
+import requests
+
+MODEL_PATH = "cattle_breed_mobilenetv2_v5promax_finetuned.keras"
+MODEL_URL = "https://drive.google.com/uc?export=download&id=1MhJpvwnBOtkOp-_XkjuFTrLVXGvJduCC"  # Replace with your Google Drive file ID
+
+# Download the model if it doesn't exist
+if not os.path.exists(MODEL_PATH):
+    print("Downloading model from Google Drive...")
+    r = requests.get(MODEL_URL)
+    with open(MODEL_PATH, "wb") as f:
+        f.write(r.content)
+    print("Model downloaded successfully!")
+
+
+
+
+
+
+
+
+
+
+
+
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 from tensorflow.keras.models import load_model
