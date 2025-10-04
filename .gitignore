@@ -1,0 +1,5 @@
+*.keras
+__pycache__/
+*.h5
+*.pt
+.DS_Store
